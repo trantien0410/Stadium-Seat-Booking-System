@@ -186,8 +186,8 @@ public class register extends javax.swing.JFrame {
         String email = Email.getText();
         String pass = password.getText();
         
-        String connectionUrl = "jdbc:mysql://localhost:3306/stadium_booking_2?user=root&password=Tien@041001";
-//        String connectionUrl = "jdbc:mysql://localhost:3306/stadium_booking_2?user=root&password=123456789";
+        
+        String connectionUrl = "jdbc:mysql://localhost:3306/stadium_booking_2?user=root&password=123456789";
         try (Connection con = DriverManager.getConnection(connectionUrl); java.sql.Statement stmt = con.createStatement();) {
             String SQL = "insert into user (first_name,last_name,phone,cus_gmail,cus_pass) value('"+fName+"','"+lName+"','"+phone+"','"+email+"','"+pass+"')";
             System.out.println("success");
@@ -234,6 +234,7 @@ public class register extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(register.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */

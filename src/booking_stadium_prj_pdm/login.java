@@ -11,20 +11,63 @@ import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
-// Hello
+
 /**
  *
  * @author Admin
  */
 public class login extends javax.swing.JFrame {
-
+//public String userInfor;
+//public String passInfor;
+//
+//    public String getUserInfor() {
+//        return userInfor;
+//    }
+//
+//    public String getPassInfor() {
+//        return passInfor;
+//    }
+//
+//    public void setUserInfor(String userInfor) {
+//        this.userInfor = userInfor;
+//    }
+//
+//    public void setPassInfor(String passInfor) {
+//        this.passInfor = passInfor;
+//    }
+//
+//    public void collectInfor(){
+//        this.userInfor = username.getText();
+//        this.passInfor = password.getText();
+//        displayInfor();
+//    }
+//    public void displayInfor(){
+//        System.out.println("User= : "+getUserInfor());
+//        System.out.println("Pass= : "+getPassInfor());
+//    }
+//
+//    @Override
+//    public String toString() {
+//        return "login{" + "userInfor=" + userInfor + ", passInfor=" + passInfor + '}';
+//    }
+    
     /**
      * Creates new form login
      */
     public login() {
         initComponents();
+//        collectInfor();
     }
+    String user;
+    String pass;
 
+    public login(String user, String pass) {
+        initComponents();
+        this.user = user;
+        this.pass = pass;
+        
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -145,11 +188,10 @@ public class login extends javax.swing.JFrame {
              JOptionPane.showMessageDialog(null, "Please input all fields !", "Message", JOptionPane.WARNING_MESSAGE);
             return;
         }
+//        collectInfor();
         String email = username.getText();
         String pass = password.getText();
-//        String connectionUrl = "jdbc:mysql://localhost:3306/stadium_booking_2?user=root&password=123456789";
-        String connectionUrl = "jdbc:mysql://localhost:3306/stadium_booking_2?user=root&password=Tien@041001";
-        
+        String connectionUrl = "jdbc:mysql://localhost:3306/stadium_booking_2?user=root&password=123456789";
         try (Connection con = DriverManager.getConnection(connectionUrl); java.sql.Statement stmt = con.createStatement();) {
             String SQL = "select * from user where cus_gmail='"+email+"' and cus_pass='"+pass+"'";
            
@@ -163,8 +205,9 @@ public class login extends javax.swing.JFrame {
                 String passw = rs.getNString("cus_pass");
                 if(email.equals(user) && pass.equals(passw)){
                     JOptionPane.showMessageDialog(this,"Logined successfully");
-                    this.setVisible(false); 
-                    new index().setVisible(true);
+                    this.setVisible(false);
+//                    new Profile(email,pass).setVisible(false);
+                    new index(email,pass).setVisible(true);
                     break;
                 }
             }
@@ -202,6 +245,7 @@ public class login extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */

@@ -14,7 +14,8 @@ public class Booking_stadium_prj_pdm {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+       login login = new login();
+       login.setVisible(true);
     }
     
 }
