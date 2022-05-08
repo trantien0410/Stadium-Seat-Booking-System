@@ -122,7 +122,7 @@ public class Confirm extends javax.swing.JFrame {
 
         txtPayment.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "PayPal", "Cash", "Visa" }));
 
-        jToggleButton1.setText("Payment");
+        jToggleButton1.setText("Pay Now");
         jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jToggleButton1ActionPerformed(evt);
@@ -187,7 +187,6 @@ public class Confirm extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(JTeamTwo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGap(2, 2, 2)))
-                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
                     .addComponent(JTime))
@@ -197,7 +196,6 @@ public class Confirm extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(JPrice, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGap(2, 2, 2)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel8)
                     .addGroup(layout.createSequentialGroup()
@@ -215,7 +213,7 @@ public class Confirm extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jToggleButton1)
                     .addComponent(jButton1))
-                .addContainerGap(39, Short.MAX_VALUE))
+                .addContainerGap(69, Short.MAX_VALUE))
         );
 
         pack();
