@@ -4,6 +4,8 @@
  */
 package booking_stadium_prj_pdm;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Admin
@@ -110,6 +112,11 @@ public class transaction extends javax.swing.JFrame {
         });
 
         jButton3.setText("Cancel Booking");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         jLabel16.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel16.setForeground(new java.awt.Color(0, 0, 128));
@@ -225,6 +232,18 @@ public class transaction extends javax.swing.JFrame {
     private void txtPaymentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPaymentActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtPaymentActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+        int res=JOptionPane.showConfirmDialog(null,"You have selected to calcel your order!\nDo you really want to cancel your order" ,"Confirm Seat",JOptionPane.YES_NO_OPTION);
+            if(res==0)
+            {
+                
+                index index = new index();
+                index.setVisible(true);
+                this.dispose();                
+            }
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
      * @param args the command line arguments
