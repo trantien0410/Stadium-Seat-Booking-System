@@ -257,7 +257,7 @@ public class Booking extends javax.swing.JFrame {
     private void btnBookingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBookingActionPerformed
         // TODO add your handling code here:
         this.setVisible(false);
-        new Confirm(ticket_id).setVisible(true);
+        new Confirm(ticket_id,user,pass).setVisible(true);
     }//GEN-LAST:event_btnBookingActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed

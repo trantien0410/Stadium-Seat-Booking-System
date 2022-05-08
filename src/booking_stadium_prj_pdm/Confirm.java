@@ -7,13 +7,14 @@ package booking_stadium_prj_pdm;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author Admin
  */
 public class Confirm extends javax.swing.JFrame {
-    String ID;
+    String ID,user,pass;
     int quantity;
     double price;
     double total;
@@ -24,12 +25,16 @@ public class Confirm extends javax.swing.JFrame {
         initComponents();
         loadInforTicket();
     }
-
-    public Confirm(String ID) {
+    public void getQuantity(){
+        this.quantity = (int) txtQuantity.getValue();
+        System.out.println("Quantity: "+this.quantity);
+    }
+    public Confirm(String ID,String user, String pass) {
         initComponents();
         this.ID = ID;
+        this.user = user;
+        this.pass = pass;
         loadInforTicket();
-        System.out.println(this.quantity);
     }
 //    public void Total(){
 //        double total = 0;
@@ -79,8 +84,8 @@ public class Confirm extends javax.swing.JFrame {
         JPrice = new javax.swing.JLabel();
         JType = new javax.swing.JLabel();
         txtQuantity = new javax.swing.JSpinner();
-        jToggleButton1 = new javax.swing.JToggleButton();
-        jButton1 = new javax.swing.JButton();
+        btnConfirm = new javax.swing.JToggleButton();
+        btnCancel = new javax.swing.JButton();
 
         jLabel2.setText("jLabel2");
 
@@ -114,17 +119,19 @@ public class Confirm extends javax.swing.JFrame {
         jLabel8.setForeground(new java.awt.Color(0, 0, 128));
         jLabel8.setText("Tick Type");
 
-        jToggleButton1.setText("Confirm");
-        jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
+        txtQuantity.setFocusCycleRoot(true);
+
+        btnConfirm.setText("Confirm");
+        btnConfirm.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton1ActionPerformed(evt);
+                btnConfirmActionPerformed(evt);
             }
         });
 
-        jButton1.setText("Cancel");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnCancel.setText("Cancel");
+        btnCancel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnCancelActionPerformed(evt);
             }
         });
 
@@ -140,8 +147,8 @@ public class Confirm extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(139, 139, 139)
-                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jToggleButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(btnCancel, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(btnConfirm, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
@@ -201,24 +208,32 @@ public class Confirm extends javax.swing.JFrame {
                     .addComponent(txtQuantity, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jToggleButton1)
-                    .addComponent(jButton1))
-                .addContainerGap(61, Short.MAX_VALUE))
+                    .addComponent(btnConfirm)
+                    .addComponent(btnCancel))
+                .addContainerGap(52, Short.MAX_VALUE))
         );
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
+    private void btnConfirmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfirmActionPerformed
+        // TODO add your handling code here:
+        getQuantity();
+        if(this.quantity > 0){
+            this.setVisible(false);
+            new transaction(ID,user,pass,this.quantity).setVisible(true);
+        }else{
+            JOptionPane.showMessageDialog(null, "Please, booking at least 1 ticket!", "Message", JOptionPane.WARNING_MESSAGE);
+        }
+        
+    }//GEN-LAST:event_btnConfirmActionPerformed
+
+    private void btnCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelActionPerformed
         // TODO add your handling code here:
         this.setVisible(false);
-        new transaction().setVisible(true);
-    }//GEN-LAST:event_jToggleButton1ActionPerformed
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+        new index(user,pass).setVisible(true);
+    }//GEN-LAST:event_btnCancelActionPerformed
 
     /**
      * @param args the command line arguments
@@ -262,7 +277,8 @@ public class Confirm extends javax.swing.JFrame {
     private javax.swing.JLabel JTeamTwo;
     private javax.swing.JLabel JTime;
     private javax.swing.JLabel JType;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton btnCancel;
+    private javax.swing.JToggleButton btnConfirm;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -271,7 +287,6 @@ public class Confirm extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JToggleButton jToggleButton1;
     private javax.swing.JSpinner txtQuantity;
     // End of variables declaration//GEN-END:variables
 }
