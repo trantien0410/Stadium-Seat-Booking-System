@@ -235,14 +235,6 @@ public class transaction extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
-        int res=JOptionPane.showConfirmDialog(null,"You have selected to calcel your order!\nDo you really want to cancel your order" ,"Confirm Seat",JOptionPane.YES_NO_OPTION);
-            if(res==0)
-            {
-                
-                index index = new index();
-                index.setVisible(true);
-                this.dispose();                
-            }
     }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
