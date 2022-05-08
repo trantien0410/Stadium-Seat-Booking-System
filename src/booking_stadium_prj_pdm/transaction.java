@@ -311,7 +311,7 @@ public class transaction extends javax.swing.JFrame {
             if(res==0)
             {
                
-                index index = new index();
+                index index = new index(user,pass);
                 index.setVisible(true);
                 this.dispose();                
             }
