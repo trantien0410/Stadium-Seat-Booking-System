@@ -7,6 +7,9 @@ package booking_stadium_prj_pdm;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /**
@@ -14,8 +17,9 @@ import javax.swing.JOptionPane;
  * @author Admin
  */
 public class transaction extends javax.swing.JFrame {
-    String ID,user,pass,price,cash;
-    int quantity;
+    String ID,user,pass,price,cash,pricePrint;
+    String id_user;
+    int quantity,remain,seats;
     double totalPrice;
     public transaction(String ID, String user, String pass,int quantity) {
         initComponents();
@@ -34,21 +38,26 @@ public class transaction extends javax.swing.JFrame {
         setInforJLabel();
         totalPrice();
     }
+    public void RemainingTicket(){
+        remain = this.seats - this.quantity;
+    }
     public void getCash(){
         this.cash = txtPayment.getSelectedItem().toString();
     }
     public void totalPrice(){
         double price = Double.parseDouble(this.price);
         this.totalPrice = this.quantity * price;
-        String pricePrint = String.valueOf(this.totalPrice);
-        JTotalPrice.setText(pricePrint);
+        this.pricePrint = String.valueOf(this.totalPrice);
+        JTotalPrice.setText(this.pricePrint);
     }
     public void setInforJLabel(){
         String connectionUrl = "jdbc:mysql://localhost:3306/stadium_booking_2?user=root&password=123456789";
         try (Connection con = DriverManager.getConnection(connectionUrl); java.sql.Statement stmt = con.createStatement();) {
             String SQL = "select * from ticket where ticket_id='"+this.ID+"'";
+            System.out.println("id ticket:"+this.ID);
             ResultSet rs = stmt.executeQuery(SQL);
             while(rs.next()){
+                this.seats = Integer.parseInt(rs.getString("seat_number"));
                 JTeamOne.setText(rs.getString("team1"));
                 JTeamTwo.setText(rs.getString("team2"));
                 JTime.setText(rs.getString("time_match"));
@@ -291,8 +300,40 @@ public class transaction extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnPaymentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPaymentActionPerformed
-        // TODO add your handling code here:
-        
+
+         RemainingTicket();
+         
+         String timeMatch = JTime.getText();
+         String type = JType.getText();
+         System.out.println("time match: "+timeMatch);
+         System.out.println("type: "+type);
+       String connectionUrl = "jdbc:mysql://localhost:3306/stadium_booking_2?user=root&password=123456789";
+        try (Connection con = DriverManager.getConnection(connectionUrl); java.sql.Statement stmt = con.createStatement();) {
+            String query = "select * from user where cus_gmail='"+this.user+"' and cus_pass='"+this.pass+"'";
+            ResultSet rs = stmt.executeQuery(query);
+            while(rs.next()){
+                this.id_user = rs.getString("cus_id");
+                System.out.println("id cus: "+id_user);
+            }
+            String update = "update ticket set seat_number='"+this.remain+"' where ticket_id='"+this.ID+"'";
+            stmt.executeUpdate(update);
+            System.out.println("success remain seats");
+            
+            if(this.remain <= 0){
+            String Active = "update ticket set isActive=0 where ticket_id='"+this.ID+"'";
+            stmt.executeUpdate(Active);
+            System.out.println("success update Active");
+            }
+            String SQL = "insert into booking (ticket_id,cus_id,time_match,total_payment,type_payment) value('"+this.ID+"','"+this.id_user+"','"+timeMatch+"','"+this.pricePrint+"','"+type+"')";
+            stmt.executeUpdate(SQL);
+            System.out.println("success insert");
+            JOptionPane.showMessageDialog(this, "Sucessfully Payment!", "Message", JOptionPane.WARNING_MESSAGE);
+            this.setVisible(false);
+            new index(user,pass).setVisible(true);
+        } // Handle any errors that may have occurred.
+        catch (SQLException e) {
+            Logger.getLogger(register.class.getName()).log(Level.SEVERE,null,e);
+        }
     }//GEN-LAST:event_btnPaymentActionPerformed
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed

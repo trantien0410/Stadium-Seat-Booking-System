@@ -32,12 +32,12 @@ public class Booking extends javax.swing.JFrame {
     }
     public void loadID(){
     this.ticket_id =  txtID.getSelectedItem().toString();
+    System.out.println("id ticket:"+ticket_id);
 }
 //
     public Booking(String user, String pass) {
         initComponents();
         addID();
-        loadID();
         this.user = user;
         this.pass = pass;
         
@@ -45,7 +45,7 @@ public class Booking extends javax.swing.JFrame {
     public void addID(){
         String connectionUrl = "jdbc:mysql://localhost:3306/stadium_booking_2?user=root&password=123456789";
         try (Connection con = DriverManager.getConnection(connectionUrl); java.sql.Statement stmt = con.createStatement();) {
-            String SQL = "select ticket_id from ticket";
+            String SQL = "select ticket_id from ticket where isActive='1'";
             ResultSet rs = stmt.executeQuery(SQL);
             while(rs.next()){
                 txtID.addItem(rs.getString("ticket_id"));
@@ -256,6 +256,7 @@ public class Booking extends javax.swing.JFrame {
 
     private void btnBookingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBookingActionPerformed
         // TODO add your handling code here:
+        loadID();
         this.setVisible(false);
         new Confirm(ticket_id,user,pass).setVisible(true);
     }//GEN-LAST:event_btnBookingActionPerformed
@@ -278,7 +279,7 @@ public class Booking extends javax.swing.JFrame {
 
  
         try (Connection con = DriverManager.getConnection(connectionUrl); java.sql.Statement stmt = con.createStatement();) {
-            String SQL = "select * from ticket";
+            String SQL = "select * from ticket where isActive='1'";
             ResultSet rs = stmt.executeQuery(SQL);
  
             // Iterate through the data in the result set and display it.
@@ -286,13 +287,13 @@ public class Booking extends javax.swing.JFrame {
             StringBuilder results = new StringBuilder();
             ResultSetMetaData metaData = rs.getMetaData();
             int numberOfColumns = metaData.getColumnCount();
-            for (int i = 1; i <= numberOfColumns; i++) {
+            for (int i = 1; i <= numberOfColumns-1; i++) {
                 results.append(metaData.getColumnName(i)).append("\t");
             }
             results.append("\n");
             //  Metadata
             while (rs.next()) {
-                for (int i = 1; i <= numberOfColumns; i++) {
+                for (int i = 1; i <= numberOfColumns-1; i++) {
                     results.append(rs.getObject(i)).append("\t");
                 }
                 results.append("\n");
@@ -314,7 +315,7 @@ public class Booking extends javax.swing.JFrame {
         try (Connection con = DriverManager.getConnection(connectionUrl); java.sql.Statement stmt = con.createStatement();) {
             if("Price".equals(checking)){
                 try{
-                    String SQL = "select * from ticket where price='"+value+"'";
+                    String SQL = "select * from ticket where price='"+value+"' and isActive='1'";
                     ResultSet rs = stmt.executeQuery(SQL);
                     StringBuilder results = new StringBuilder();
                     ResultSetMetaData metaData = rs.getMetaData();
@@ -338,7 +339,7 @@ public class Booking extends javax.swing.JFrame {
             
             if("Time".equals(checking)){
                 try{
-                    String SQL = "select * from ticket where time_match='"+value+"'";
+                    String SQL = "select * from ticket where time_match='"+value+"' and isActive='1'";
                     ResultSet rs = stmt.executeQuery(SQL);
                     StringBuilder results = new StringBuilder();
                     ResultSetMetaData metaData = rs.getMetaData();
@@ -361,7 +362,7 @@ public class Booking extends javax.swing.JFrame {
             }
             if("Type".equals(checking)){
                 try{
-                    String SQL = "select * from ticket where ticket_type='"+value+"'";
+                    String SQL = "select * from ticket where ticket_type='"+value+"' and isActive='1'";
                     ResultSet rs = stmt.executeQuery(SQL);
                     StringBuilder results = new StringBuilder();
                     ResultSetMetaData metaData = rs.getMetaData();
@@ -384,7 +385,7 @@ public class Booking extends javax.swing.JFrame {
             }
             if("Team".equals(checking)){
                 try{
-                    String SQL = "(Select * from ticket where team1 = '"+value+"') union (Select * from ticket where team2 = '"+value+"')";
+                    String SQL = "(Select * from ticket where team1 = '"+value+"' and isActive='1') union (Select * from ticket where team2 = '"+value+"' and isActive='1')";
                     ResultSet rs = stmt.executeQuery(SQL);
                     StringBuilder results = new StringBuilder();
                     ResultSetMetaData metaData = rs.getMetaData();

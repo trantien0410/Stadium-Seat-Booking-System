@@ -15,9 +15,10 @@ import javax.swing.JOptionPane;
  */
 public class Confirm extends javax.swing.JFrame {
     String ID,user,pass;
-    int quantity;
+    int quantity,seats;
     double price;
     double total;
+    
     /**
      * Creates new form Confirm
      */
@@ -49,13 +50,14 @@ public class Confirm extends javax.swing.JFrame {
             String SQL = "select * from ticket where ticket_id='"+ID+"'";
             ResultSet rs = stmt.executeQuery(SQL);
             while(rs.next()){
+                this.seats = Integer.parseInt(rs.getString("seat_number"));
                 JTeamOne.setText(rs.getString("team1"));
                 JTeamTwo.setText(rs.getString("team2"));
                 JTime.setText(rs.getString("time_match"));
                 JPrice.setText(rs.getString("price"));
                 this.price = (double) rs.getDouble("price");
                 JType.setText(rs.getString("ticket_type"));
-//                JTotal.setText(this.total);
+                JDate.setText(rs.getString("date_ticket"));
             }
         }catch (Exception e){
             e.printStackTrace();
@@ -86,6 +88,8 @@ public class Confirm extends javax.swing.JFrame {
         txtQuantity = new javax.swing.JSpinner();
         btnConfirm = new javax.swing.JToggleButton();
         btnCancel = new javax.swing.JButton();
+        jLabel10 = new javax.swing.JLabel();
+        JDate = new javax.swing.JLabel();
 
         jLabel2.setText("jLabel2");
 
@@ -135,6 +139,12 @@ public class Confirm extends javax.swing.JFrame {
             }
         });
 
+        jLabel10.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(0, 0, 128));
+        jLabel10.setText("Date");
+
+        JDate.setText("jLabel6");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -145,9 +155,6 @@ public class Confirm extends javax.swing.JFrame {
                     .addComponent(jLabel1)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(139, 139, 139)
-                                .addComponent(btnCancel, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(btnConfirm, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -169,7 +176,13 @@ public class Confirm extends javax.swing.JFrame {
                                         .addComponent(JTeamTwo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addComponent(JTime, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addComponent(JPrice, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(JType, javax.swing.GroupLayout.DEFAULT_SIZE, 273, Short.MAX_VALUE)))))
+                                        .addComponent(JType, javax.swing.GroupLayout.DEFAULT_SIZE, 273, Short.MAX_VALUE))))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(55, 55, 55)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(btnCancel, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(JDate, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addGap(38, 38, 38)))
                 .addGap(202, 202, 202))
         );
@@ -207,10 +220,16 @@ public class Confirm extends javax.swing.JFrame {
                     .addComponent(jLabel9)
                     .addComponent(txtQuantity, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel10)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(JDate, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(2, 2, 2)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnConfirm)
                     .addComponent(btnCancel))
-                .addContainerGap(52, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         pack();
@@ -220,10 +239,13 @@ public class Confirm extends javax.swing.JFrame {
     private void btnConfirmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfirmActionPerformed
         // TODO add your handling code here:
         getQuantity();
-        if(this.quantity > 0){
+        if(this.quantity > this.seats){
+            JOptionPane.showMessageDialog(null, "The Quantity over seats number!", "Message", JOptionPane.ERROR_MESSAGE);
+        }else if(this.quantity > 0){
             this.setVisible(false);
             new transaction(ID,user,pass,this.quantity).setVisible(true);
-        }else{
+        }
+        else if(this.quantity < 0){
             JOptionPane.showMessageDialog(null, "Please, booking at least 1 ticket!", "Message", JOptionPane.WARNING_MESSAGE);
         }
         
@@ -274,6 +296,7 @@ public class Confirm extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel JDate;
     private javax.swing.JLabel JPrice;
     private javax.swing.JLabel JTeamOne;
     private javax.swing.JLabel JTeamTwo;
@@ -282,6 +305,7 @@ public class Confirm extends javax.swing.JFrame {
     private javax.swing.JButton btnCancel;
     private javax.swing.JToggleButton btnConfirm;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
