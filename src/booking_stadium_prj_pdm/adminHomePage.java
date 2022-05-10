@@ -39,6 +39,7 @@ public class adminHomePage extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         btnAllUser = new javax.swing.JToggleButton();
+        btnShow = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -81,6 +82,13 @@ public class adminHomePage extends javax.swing.JFrame {
             }
         });
 
+        btnShow.setText(" Transaction Log");
+        btnShow.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnShowActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -88,8 +96,13 @@ public class adminHomePage extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+                        .addGap(174, 174, 174)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 354, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
                         .addGap(21, 21, 21)
-                        .addComponent(btnAddNewTicket)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(btnShow, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnAddNewTicket, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(18, 18, 18)
                         .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
@@ -97,11 +110,8 @@ public class adminHomePage extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(btnAllUser, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(btnLogOut, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(174, 174, 174)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 354, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(98, Short.MAX_VALUE))
+                        .addComponent(btnLogOut, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(95, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -115,7 +125,9 @@ public class adminHomePage extends javax.swing.JFrame {
                     .addComponent(jButton2)
                     .addComponent(jButton3)
                     .addComponent(btnAllUser))
-                .addContainerGap(309, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(btnShow)
+                .addContainerGap(269, Short.MAX_VALUE))
         );
 
         pack();
@@ -146,6 +158,12 @@ public class adminHomePage extends javax.swing.JFrame {
         this.setVisible(false);
         new AllUser().setVisible(true);
     }//GEN-LAST:event_btnAllUserActionPerformed
+
+    private void btnShowActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnShowActionPerformed
+        // TODO add your handling code here:
+        this.setVisible(false);
+        new AdHistory().setVisible(true);
+    }//GEN-LAST:event_btnShowActionPerformed
 
     /**
      * @param args the command line arguments
@@ -189,6 +207,7 @@ public class adminHomePage extends javax.swing.JFrame {
     private javax.swing.JButton btnAddNewTicket;
     private javax.swing.JToggleButton btnAllUser;
     private javax.swing.JButton btnLogOut;
+    private javax.swing.JButton btnShow;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;

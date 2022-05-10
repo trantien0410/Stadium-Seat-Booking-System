@@ -9,7 +9,6 @@ package booking_stadium_prj_pdm;
  * @author Admin
  */
 public class index extends javax.swing.JFrame {
-
     /**
      * Creates new form index
      */
@@ -133,6 +132,8 @@ public class index extends javax.swing.JFrame {
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
+        this.setVisible(false);
+        new History(user,pass).setVisible(true);
     }//GEN-LAST:event_jButton4ActionPerformed
 
     /**

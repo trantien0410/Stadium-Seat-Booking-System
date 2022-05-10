@@ -4,6 +4,12 @@
  */
 package booking_stadium_prj_pdm;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
+import java.sql.SQLException;
+
 /**
  *
  * @author Admin
@@ -28,8 +34,8 @@ public class AdHistory extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
-        jButton1 = new javax.swing.JButton();
+        txtResult = new javax.swing.JTextArea();
+        btnShow = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
 
@@ -39,14 +45,14 @@ public class AdHistory extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(0, 0, 128));
         jLabel1.setText(" Transaction Log ");
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
+        txtResult.setColumns(20);
+        txtResult.setRows(5);
+        jScrollPane1.setViewportView(txtResult);
 
-        jButton1.setText("Show Transaction");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnShow.setText("Show Transaction");
+        btnShow.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnShowActionPerformed(evt);
             }
         });
 
@@ -67,7 +73,7 @@ public class AdHistory extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(80, 80, 80)
-                .addComponent(jButton1)
+                .addComponent(btnShow)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButton2)
                 .addGap(189, 189, 189))
@@ -95,7 +101,7 @@ public class AdHistory extends javax.swing.JFrame {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(36, 36, 36)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
+                    .addComponent(btnShow)
                     .addComponent(jButton2))
                 .addContainerGap(30, Short.MAX_VALUE))
         );
@@ -103,9 +109,41 @@ public class AdHistory extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnShowActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnShowActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+        txtResult.selectAll();
+        txtResult.replaceSelection("");
+        String connectionUrl = new ConnectionProvider().getConnection();
+
+
+ 
+        try (Connection con = DriverManager.getConnection(connectionUrl); java.sql.Statement stmt = con.createStatement();) {
+            String SQL = "select * from transaction";
+            ResultSet rs = stmt.executeQuery(SQL);
+ 
+            // Iterate through the data in the result set and display it.
+            // process query results
+            StringBuilder results = new StringBuilder();
+            ResultSetMetaData metaData = rs.getMetaData();
+            int numberOfColumns = metaData.getColumnCount();
+            for (int i = 1; i <= numberOfColumns; i++) {
+                results.append(metaData.getColumnName(i)).append("\t");
+            }
+            results.append("\n");
+            //  Metadata
+            while (rs.next()) {
+                for (int i = 1; i <= numberOfColumns; i++) {
+                    results.append(rs.getObject(i)).append("\t");
+                }
+                results.append("\n");
+            }
+            txtResult.setText(results.toString());
+        } // Handle any errors that may have occurred.
+        catch (SQLException e) {
+            txtResult.setText(e.getMessage());
+        }
+        
+    }//GEN-LAST:event_btnShowActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         this.setVisible(false);
@@ -148,11 +186,11 @@ public class AdHistory extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton btnShow;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JTextArea txtResult;
     // End of variables declaration//GEN-END:variables
 }

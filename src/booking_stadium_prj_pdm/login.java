@@ -192,7 +192,8 @@ public class login extends javax.swing.JFrame {
 //        collectInfor();
         String email = username.getText();
         String pass = password.getText();
-        String connectionUrl = "jdbc:mysql://localhost:3306/stadium_booking_2?user=root&password=123456789";
+//        String connectionUrl = "jdbc:mysql://localhost:3306/stadium_booking_2?user=root&password=123456789";
+            String connectionUrl = new ConnectionProvider().getConnection();
         try (Connection con = DriverManager.getConnection(connectionUrl); java.sql.Statement stmt = con.createStatement();) {
             String SQL = "select * from user where cus_gmail='"+email+"' and cus_pass='"+pass+"'";
            
