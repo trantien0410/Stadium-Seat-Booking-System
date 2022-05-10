@@ -233,7 +233,7 @@ public class Profile extends javax.swing.JFrame{
     private void btnShowActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnShowActionPerformed
         System.out.println("Profle show:"+UserProfile);
         System.out.println("Profle show:"+PassProfile);
-        String connectionUrl = "jdbc:mysql://localhost:3306/stadium_booking_2?user=root&password=123456789";
+        String connectionUrl = new ConnectionProvider().getConnection();
         try (Connection con = DriverManager.getConnection(connectionUrl); java.sql.Statement stmt = con.createStatement();) {
             String SQL = "select * from user where cus_gmail='"+UserProfile+"' and cus_pass='"+PassProfile+"'";
             ResultSet rs = stmt.executeQuery(SQL);
@@ -256,7 +256,7 @@ public class Profile extends javax.swing.JFrame{
     }//GEN-LAST:event_txtGenderActionPerformed
 
     private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
-        String connectionUrl = "jdbc:mysql://localhost:3306/stadium_booking_2?user=root&password=123456789";
+        String connectionUrl = new ConnectionProvider().getConnection();
         String gender = (String) txtGender.getSelectedItem();
         String first_name       = txtFirstName.getText();
         String last_name        = txtLastName.getText();

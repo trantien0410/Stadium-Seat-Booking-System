@@ -26,7 +26,7 @@ public class EditTicket extends javax.swing.JFrame {
         AddID();
     }
     public void AddID(){
-        String connectionUrl = "jdbc:mysql://localhost:3306/stadium_booking_2?user=root&password=123456789";
+        String connectionUrl = new ConnectionProvider().getConnection();
         try (Connection con = DriverManager.getConnection(connectionUrl); java.sql.Statement stmt = con.createStatement();) {
             String SQL = "select ticket_id from ticket";
             ResultSet rs = stmt.executeQuery(SQL);
@@ -284,7 +284,7 @@ public class EditTicket extends javax.swing.JFrame {
     }//GEN-LAST:event_btnCancelActionPerformed
 
     private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
-        String connectionUrl = "jdbc:mysql://localhost:3306/stadium_booking_2?user=root&password=123456789";
+        String connectionUrl = new ConnectionProvider().getConnection();
         String ID = (String) txtID.getSelectedItem();
         String team1     = txtTeam1.getText();
         String team2     = txtTeam2.getText();
@@ -313,7 +313,7 @@ public class EditTicket extends javax.swing.JFrame {
     private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
         // TODO add your handling code here:
         String ID =  txtID.getSelectedItem().toString();
-        String connectionUrl = "jdbc:mysql://localhost:3306/stadium_booking_2?user=root&password=123456789";
+        String connectionUrl = new ConnectionProvider().getConnection();
         try (Connection con = DriverManager.getConnection(connectionUrl); java.sql.Statement stmt = con.createStatement();) {
             String SQL = "select * from ticket where ticket_id='"+ID+"'";
             ResultSet rs = stmt.executeQuery(SQL);
@@ -337,7 +337,7 @@ public class EditTicket extends javax.swing.JFrame {
 
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
         // TODO add your handling code here:
-        String connectionUrl = "jdbc:mysql://localhost:3306/stadium_booking_2?user=root&password=123456789";
+        String connectionUrl = new ConnectionProvider().getConnection();
         String ID = (String) txtID.getSelectedItem();
         try (Connection con = DriverManager.getConnection(connectionUrl); java.sql.Statement stmt = con.createStatement();) {
             String SQL = "delete from ticket where  ticket_id='"+ID+"'";

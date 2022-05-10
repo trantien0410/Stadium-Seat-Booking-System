@@ -119,7 +119,7 @@ public class AllUser extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         txtResult.selectAll();
         txtResult.replaceSelection("");
-        String connectionUrl = "jdbc:mysql://localhost:3306/stadium_booking_2?user=root&password=123456789";
+        String connectionUrl = new ConnectionProvider().getConnection();
 
 
  

@@ -43,7 +43,7 @@ public class Booking extends javax.swing.JFrame {
         
     }
     public void addID(){
-        String connectionUrl = "jdbc:mysql://localhost:3306/stadium_booking_2?user=root&password=123456789";
+        String connectionUrl = new ConnectionProvider().getConnection();
         try (Connection con = DriverManager.getConnection(connectionUrl); java.sql.Statement stmt = con.createStatement();) {
             String SQL = "select ticket_id from ticket where isActive='1'";
             ResultSet rs = stmt.executeQuery(SQL);
@@ -188,6 +188,12 @@ public class Booking extends javax.swing.JFrame {
             }
         });
 
+        txtID.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtIDActionPerformed(evt);
+            }
+        });
+
         txtChecking.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Team", "Price", "Time", "Type" }));
 
         jLabel3.setText("Choose ID ticket to book");
@@ -274,7 +280,7 @@ public class Booking extends javax.swing.JFrame {
         // TODO add your handling code here:
         txtResult.selectAll();
         txtResult.replaceSelection("");
-        String connectionUrl = "jdbc:mysql://localhost:3306/stadium_booking_2?user=root&password=123456789";
+        String connectionUrl = new ConnectionProvider().getConnection();
 
 
  
@@ -311,7 +317,7 @@ public class Booking extends javax.swing.JFrame {
         String value = txtValue.getText();
         txtResult.selectAll();
         txtResult.replaceSelection("");
-        String connectionUrl = "jdbc:mysql://localhost:3306/stadium_booking_2?user=root&password=123456789";
+        String connectionUrl = new ConnectionProvider().getConnection();
         try (Connection con = DriverManager.getConnection(connectionUrl); java.sql.Statement stmt = con.createStatement();) {
             if("Price".equals(checking)){
                 try{
@@ -410,6 +416,10 @@ public class Booking extends javax.swing.JFrame {
             e.printStackTrace();
         }
     }//GEN-LAST:event_btnSearchActionPerformed
+
+    private void txtIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIDActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtIDActionPerformed
 
     /**
      * @param args the command line arguments
