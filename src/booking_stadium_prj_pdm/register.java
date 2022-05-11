@@ -212,9 +212,8 @@ public class register extends javax.swing.JFrame {
             ResultSet rs = stmt.executeQuery(query);
             while(rs.next()){
                 this.account_checking = rs.getString("cus_gmail");
-                System.out.println("ACcount checking: "+this.account_checking);
+                System.out.println("Account checking: "+this.account_checking);
             }
-            
             if(email.equals(this.account_checking)){
                 JOptionPane.showMessageDialog(null, "This Account is already exist!", "Message", JOptionPane.WARNING_MESSAGE);
                 this.setVisible(false);
