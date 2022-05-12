@@ -245,7 +245,7 @@ public class Confirm extends javax.swing.JFrame {
             this.setVisible(false);
             new transaction(ID,user,pass,this.quantity).setVisible(true);
         }
-        else if(this.quantity < 0){
+        else if(this.quantity <= 0){
             JOptionPane.showMessageDialog(null, "Please, booking at least 1 ticket!", "Message", JOptionPane.WARNING_MESSAGE);
         }
         
