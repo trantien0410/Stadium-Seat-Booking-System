@@ -90,6 +90,7 @@ public class Confirm extends javax.swing.JFrame {
         btnCancel = new javax.swing.JButton();
         jLabel10 = new javax.swing.JLabel();
         JDate = new javax.swing.JLabel();
+        btnBack = new javax.swing.JButton();
 
         jLabel2.setText("jLabel2");
 
@@ -145,6 +146,13 @@ public class Confirm extends javax.swing.JFrame {
 
         JDate.setText("jLabel6");
 
+        btnBack.setText("back");
+        btnBack.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBackActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -181,7 +189,10 @@ public class Confirm extends javax.swing.JFrame {
                                 .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(55, 55, 55)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(btnCancel, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(btnCancel, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(53, 53, 53)
+                                        .addComponent(btnBack))
                                     .addComponent(JDate, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addGap(38, 38, 38)))
                 .addGap(202, 202, 202))
@@ -228,7 +239,8 @@ public class Confirm extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnConfirm)
-                    .addComponent(btnCancel))
+                    .addComponent(btnCancel)
+                    .addComponent(btnBack))
                 .addContainerGap())
         );
 
@@ -256,6 +268,12 @@ public class Confirm extends javax.swing.JFrame {
         this.setVisible(false);
         new index(user,pass).setVisible(true);
     }//GEN-LAST:event_btnCancelActionPerformed
+
+    private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
+        // TODO add your handling code here:
+        this.setVisible(false);
+        new index(user,pass).setVisible(true);
+    }//GEN-LAST:event_btnBackActionPerformed
 
     /**
      * @param args the command line arguments
@@ -302,6 +320,7 @@ public class Confirm extends javax.swing.JFrame {
     private javax.swing.JLabel JTeamTwo;
     private javax.swing.JLabel JTime;
     private javax.swing.JLabel JType;
+    private javax.swing.JButton btnBack;
     private javax.swing.JButton btnCancel;
     private javax.swing.JToggleButton btnConfirm;
     private javax.swing.JLabel jLabel1;
