@@ -69,7 +69,7 @@ public class adminHomePage extends javax.swing.JFrame {
             }
         });
 
-        jButton3.setText("All Tickets");
+        jButton3.setText("All Ticket");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
