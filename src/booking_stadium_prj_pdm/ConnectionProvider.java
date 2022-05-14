@@ -9,7 +9,7 @@ package booking_stadium_prj_pdm;
  * @author Admin
  */
 public class ConnectionProvider {
-    String connection = "jdbc:mysql://localhost:3306/stadium_booking_2?user=root&password=123456789";
+    String connection = "jdbc:mysql://localhost:3306/stadium_booking_2?user=root&password=13101502OJY";
 
     public String getConnection() {
         return connection;

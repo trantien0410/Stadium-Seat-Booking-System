@@ -155,10 +155,10 @@ public class Booking extends javax.swing.JFrame {
         });
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(204, 102, 0));
+        jLabel3.setForeground(new java.awt.Color(204, 136, 0));
         jLabel3.setText("Choose ID ticket to book");
 
-        jButton2.setBackground(new java.awt.Color(255, 153, 102));
+        jButton2.setBackground(new java.awt.Color(134, 89, 45));
         jButton2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jButton2.setForeground(new java.awt.Color(255, 255, 255));
         jButton2.setText("Cancel");
@@ -168,7 +168,7 @@ public class Booking extends javax.swing.JFrame {
             }
         });
 
-        btnBooking.setBackground(new java.awt.Color(255, 153, 102));
+        btnBooking.setBackground(new java.awt.Color(134, 89, 45));
         btnBooking.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btnBooking.setForeground(new java.awt.Color(255, 255, 255));
         btnBooking.setText("Booking");
@@ -178,7 +178,7 @@ public class Booking extends javax.swing.JFrame {
             }
         });
 
-        btnShow.setBackground(new java.awt.Color(255, 153, 102));
+        btnShow.setBackground(new java.awt.Color(134, 89, 45));
         btnShow.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btnShow.setForeground(new java.awt.Color(255, 255, 255));
         btnShow.setText("Show All Ticket");
@@ -188,7 +188,7 @@ public class Booking extends javax.swing.JFrame {
             }
         });
 
-        txtChecking.setBackground(new java.awt.Color(255, 153, 102));
+        txtChecking.setBackground(new java.awt.Color(134, 89, 45));
         txtChecking.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         txtChecking.setForeground(new java.awt.Color(255, 255, 255));
         txtChecking.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Team", "Price", "Time", "Type" }));
@@ -207,7 +207,7 @@ public class Booking extends javax.swing.JFrame {
             }
         });
 
-        btnSearch.setBackground(new java.awt.Color(255, 153, 102));
+        btnSearch.setBackground(new java.awt.Color(134, 89, 45));
         btnSearch.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btnSearch.setForeground(new java.awt.Color(255, 255, 255));
         btnSearch.setText("Search");
@@ -221,11 +221,12 @@ public class Booking extends javax.swing.JFrame {
         txtResult.setBackground(new java.awt.Color(255, 247, 230));
         txtResult.setColumns(20);
         txtResult.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        txtResult.setForeground(new java.awt.Color(153, 77, 0));
         txtResult.setRows(5);
         jScrollPane1.setViewportView(txtResult);
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 30)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(204, 102, 0));
+        jLabel2.setForeground(new java.awt.Color(167, 105, 42));
         jLabel2.setText(" Booking Details");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);

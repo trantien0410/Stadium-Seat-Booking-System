@@ -81,12 +81,12 @@ public class EditTicket extends javax.swing.JFrame {
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 30)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(204, 102, 0));
+        jLabel2.setForeground(new java.awt.Color(167, 105, 42));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Edit Ticket Page");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 25, 270, 51));
 
-        btnSearch.setBackground(new java.awt.Color(255, 153, 102));
+        btnSearch.setBackground(new java.awt.Color(134, 89, 45));
         btnSearch.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btnSearch.setForeground(new java.awt.Color(255, 255, 255));
         btnSearch.setText("Search");
@@ -97,7 +97,7 @@ public class EditTicket extends javax.swing.JFrame {
         });
         jPanel1.add(btnSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(629, 80, -1, -1));
 
-        btnCancel.setBackground(new java.awt.Color(255, 153, 102));
+        btnCancel.setBackground(new java.awt.Color(134, 89, 45));
         btnCancel.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btnCancel.setForeground(new java.awt.Color(255, 255, 255));
         btnCancel.setText("Cancel");
@@ -164,7 +164,7 @@ public class EditTicket extends javax.swing.JFrame {
         txtActive.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "0" }));
         jPanel1.add(txtActive, new org.netbeans.lib.awtextra.AbsoluteConstraints(239, 452, -1, -1));
 
-        btnUpdate.setBackground(new java.awt.Color(255, 153, 102));
+        btnUpdate.setBackground(new java.awt.Color(134, 89, 45));
         btnUpdate.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btnUpdate.setForeground(new java.awt.Color(255, 255, 255));
         btnUpdate.setText("Update Ticket");
@@ -175,7 +175,7 @@ public class EditTicket extends javax.swing.JFrame {
         });
         jPanel1.add(btnUpdate, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 510, -1, -1));
 
-        btnDelete.setBackground(new java.awt.Color(255, 153, 102));
+        btnDelete.setBackground(new java.awt.Color(134, 89, 45));
         btnDelete.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btnDelete.setForeground(new java.awt.Color(255, 255, 255));
         btnDelete.setText("Delete");
@@ -187,47 +187,47 @@ public class EditTicket extends javax.swing.JFrame {
         jPanel1.add(btnDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 510, 98, -1));
 
         jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(230, 115, 0));
+        jLabel7.setForeground(new java.awt.Color(204, 136, 0));
         jLabel7.setText("Price");
         jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(51, 316, 84, -1));
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(230, 115, 0));
+        jLabel5.setForeground(new java.awt.Color(204, 136, 0));
         jLabel5.setText("Time");
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(51, 230, 98, -1));
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(230, 115, 0));
+        jLabel6.setForeground(new java.awt.Color(204, 136, 0));
         jLabel6.setText("Quantity Of Seats");
         jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(51, 273, -1, -1));
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(230, 115, 0));
+        jLabel4.setForeground(new java.awt.Color(204, 136, 0));
         jLabel4.setText("Team Two ");
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(51, 187, 98, -1));
 
         jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(230, 115, 0));
+        jLabel9.setForeground(new java.awt.Color(204, 136, 0));
         jLabel9.setText("Team One");
         jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(51, 145, 98, 22));
 
         jLabel10.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(230, 115, 0));
+        jLabel10.setForeground(new java.awt.Color(204, 136, 0));
         jLabel10.setText("Choose ID Ticket");
         jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(51, 97, 150, -1));
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(230, 115, 0));
+        jLabel3.setForeground(new java.awt.Color(204, 136, 0));
         jLabel3.setText("Type");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(51, 365, 84, -1));
 
         jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(230, 115, 0));
+        jLabel8.setForeground(new java.awt.Color(204, 136, 0));
         jLabel8.setText("Date");
         jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(51, 409, 84, -1));
 
         jLabel11.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(230, 115, 0));
+        jLabel11.setForeground(new java.awt.Color(204, 136, 0));
         jLabel11.setText("Active");
         jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(51, 455, 84, -1));
 

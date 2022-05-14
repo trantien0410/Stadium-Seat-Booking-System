@@ -63,34 +63,34 @@ public class Profile extends javax.swing.JFrame{
         jPanel1.setBackground(new java.awt.Color(255, 229, 204));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(230, 115, 0));
+        jLabel1.setForeground(new java.awt.Color(204, 136, 0));
         jLabel1.setText("First name");
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(230, 115, 0));
+        jLabel2.setForeground(new java.awt.Color(204, 136, 0));
         jLabel2.setText("Last name");
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(230, 115, 0));
+        jLabel4.setForeground(new java.awt.Color(204, 136, 0));
         jLabel4.setText("Gender");
 
         jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(230, 115, 0));
+        jLabel8.setForeground(new java.awt.Color(204, 136, 0));
         jLabel8.setText("Age");
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(230, 115, 0));
+        jLabel5.setForeground(new java.awt.Color(204, 136, 0));
         jLabel5.setText("Phone");
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(230, 115, 0));
+        jLabel6.setForeground(new java.awt.Color(204, 136, 0));
         jLabel6.setText("User Name");
 
         jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(230, 115, 0));
+        jLabel7.setForeground(new java.awt.Color(204, 136, 0));
         jLabel7.setText("Password");
 
-        btnUpdate.setBackground(new java.awt.Color(255, 153, 102));
+        btnUpdate.setBackground(new java.awt.Color(134, 89, 45));
         btnUpdate.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btnUpdate.setForeground(new java.awt.Color(255, 255, 255));
         btnUpdate.setText("Update");
@@ -145,11 +145,11 @@ public class Profile extends javax.swing.JFrame{
         txtLastName.setForeground(new java.awt.Color(153, 77, 0));
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 30)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(230, 115, 0));
+        jLabel3.setForeground(new java.awt.Color(167, 105, 42));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("User Profile Page");
 
-        btnShow.setBackground(new java.awt.Color(255, 153, 102));
+        btnShow.setBackground(new java.awt.Color(134, 89, 45));
         btnShow.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btnShow.setForeground(new java.awt.Color(255, 255, 255));
         btnShow.setText("Show Profile");
@@ -159,7 +159,7 @@ public class Profile extends javax.swing.JFrame{
             }
         });
 
-        jButton1.setBackground(new java.awt.Color(255, 153, 102));
+        jButton1.setBackground(new java.awt.Color(134, 89, 45));
         jButton1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Back");

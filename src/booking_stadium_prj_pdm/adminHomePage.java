@@ -49,10 +49,10 @@ public class adminHomePage extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(255, 229, 204));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 30)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(204, 102, 0));
+        jLabel1.setForeground(new java.awt.Color(204, 136, 0));
         jLabel1.setText("Admin Home Page Booking Seat System");
 
-        btnLogOut.setBackground(new java.awt.Color(255, 153, 102));
+        btnLogOut.setBackground(new java.awt.Color(134, 89, 45));
         btnLogOut.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btnLogOut.setForeground(new java.awt.Color(255, 255, 255));
         btnLogOut.setText("Log out");
@@ -62,7 +62,7 @@ public class adminHomePage extends javax.swing.JFrame {
             }
         });
 
-        btnAddNewTicket.setBackground(new java.awt.Color(255, 153, 102));
+        btnAddNewTicket.setBackground(new java.awt.Color(134, 89, 45));
         btnAddNewTicket.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btnAddNewTicket.setForeground(new java.awt.Color(255, 255, 255));
         btnAddNewTicket.setText("Add New Ticket");
@@ -72,7 +72,7 @@ public class adminHomePage extends javax.swing.JFrame {
             }
         });
 
-        jButton2.setBackground(new java.awt.Color(255, 153, 102));
+        jButton2.setBackground(new java.awt.Color(134, 89, 45));
         jButton2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jButton2.setForeground(new java.awt.Color(255, 255, 255));
         jButton2.setText("Edit Ticket");
@@ -82,7 +82,7 @@ public class adminHomePage extends javax.swing.JFrame {
             }
         });
 
-        jButton3.setBackground(new java.awt.Color(255, 153, 102));
+        jButton3.setBackground(new java.awt.Color(134, 89, 45));
         jButton3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jButton3.setForeground(new java.awt.Color(255, 255, 255));
         jButton3.setText("All Ticket");
@@ -92,7 +92,7 @@ public class adminHomePage extends javax.swing.JFrame {
             }
         });
 
-        btnAllUser.setBackground(new java.awt.Color(255, 153, 102));
+        btnAllUser.setBackground(new java.awt.Color(134, 89, 45));
         btnAllUser.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btnAllUser.setForeground(new java.awt.Color(255, 255, 255));
         btnAllUser.setText("All User");
@@ -102,7 +102,7 @@ public class adminHomePage extends javax.swing.JFrame {
             }
         });
 
-        btnShow.setBackground(new java.awt.Color(255, 153, 102));
+        btnShow.setBackground(new java.awt.Color(134, 89, 45));
         btnShow.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btnShow.setForeground(new java.awt.Color(255, 255, 255));
         btnShow.setText(" Transaction Log");
@@ -112,7 +112,7 @@ public class adminHomePage extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setBackground(new java.awt.Color(255, 153, 102));
+        jButton1.setBackground(new java.awt.Color(134, 89, 45));
         jButton1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Search by Query");

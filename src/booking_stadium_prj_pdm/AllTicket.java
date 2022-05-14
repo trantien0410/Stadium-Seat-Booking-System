@@ -49,6 +49,7 @@ public class AllTicket extends javax.swing.JFrame {
         txtResult.setBackground(new java.awt.Color(255, 247, 230));
         txtResult.setColumns(20);
         txtResult.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        txtResult.setForeground(new java.awt.Color(153, 77, 0));
         txtResult.setRows(5);
         jScrollPane1.setViewportView(txtResult);
 
@@ -56,7 +57,7 @@ public class AllTicket extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(204, 102, 0));
         jLabel2.setText("Show All Ticket Page");
 
-        btnShowAllTicket.setBackground(new java.awt.Color(255, 153, 102));
+        btnShowAllTicket.setBackground(new java.awt.Color(191, 128, 64));
         btnShowAllTicket.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btnShowAllTicket.setForeground(new java.awt.Color(255, 255, 255));
         btnShowAllTicket.setText("Show All Ticket");
@@ -66,7 +67,7 @@ public class AllTicket extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setBackground(new java.awt.Color(255, 153, 102));
+        jButton1.setBackground(new java.awt.Color(191, 128, 64));
         jButton1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Back");

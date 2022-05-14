@@ -44,7 +44,7 @@ public class AdHistory extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(255, 229, 204));
 
-        jButton2.setBackground(new java.awt.Color(255, 153, 102));
+        jButton2.setBackground(new java.awt.Color(191, 128, 64));
         jButton2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jButton2.setForeground(new java.awt.Color(255, 255, 255));
         jButton2.setText("Back ");
@@ -57,10 +57,11 @@ public class AdHistory extends javax.swing.JFrame {
         txtResult.setBackground(new java.awt.Color(255, 247, 230));
         txtResult.setColumns(20);
         txtResult.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        txtResult.setForeground(new java.awt.Color(153, 77, 0));
         txtResult.setRows(5);
         jScrollPane1.setViewportView(txtResult);
 
-        btnShow.setBackground(new java.awt.Color(255, 153, 102));
+        btnShow.setBackground(new java.awt.Color(191, 128, 64));
         btnShow.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btnShow.setForeground(new java.awt.Color(255, 255, 255));
         btnShow.setText("Show Transaction");

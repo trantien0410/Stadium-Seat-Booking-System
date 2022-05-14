@@ -60,31 +60,31 @@ public class AddNewTicket extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(255, 229, 204));
 
         jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(230, 115, 0));
+        jLabel9.setForeground(new java.awt.Color(204, 136, 0));
         jLabel9.setText("Date");
 
         jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(230, 115, 0));
+        jLabel8.setForeground(new java.awt.Color(204, 136, 0));
         jLabel8.setText("Tick Type");
 
         jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(230, 115, 0));
+        jLabel7.setForeground(new java.awt.Color(204, 136, 0));
         jLabel7.setText("Price");
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(230, 115, 0));
+        jLabel6.setForeground(new java.awt.Color(204, 136, 0));
         jLabel6.setText("Quantity Of Seats");
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(230, 115, 0));
+        jLabel5.setForeground(new java.awt.Color(204, 136, 0));
         jLabel5.setText("Time");
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(230, 115, 0));
+        jLabel4.setForeground(new java.awt.Color(204, 136, 0));
         jLabel4.setText("Team Two ");
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(230, 115, 0));
+        jLabel3.setForeground(new java.awt.Color(204, 136, 0));
         jLabel3.setText("Team One");
 
         txtTeam1.setBackground(new java.awt.Color(255, 247, 230));
@@ -137,10 +137,10 @@ public class AddNewTicket extends javax.swing.JFrame {
         });
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 30)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(204, 102, 0));
+        jLabel2.setForeground(new java.awt.Color(167, 105, 42));
         jLabel2.setText("Add New Ticket Page");
 
-        btnAddNewTicket.setBackground(new java.awt.Color(255, 153, 102));
+        btnAddNewTicket.setBackground(new java.awt.Color(134, 89, 45));
         btnAddNewTicket.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btnAddNewTicket.setForeground(new java.awt.Color(255, 255, 255));
         btnAddNewTicket.setText("Add New Ticket");
@@ -150,7 +150,7 @@ public class AddNewTicket extends javax.swing.JFrame {
             }
         });
 
-        btnCancel.setBackground(new java.awt.Color(255, 153, 102));
+        btnCancel.setBackground(new java.awt.Color(134, 89, 45));
         btnCancel.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btnCancel.setForeground(new java.awt.Color(255, 255, 255));
         btnCancel.setText("Cancel");

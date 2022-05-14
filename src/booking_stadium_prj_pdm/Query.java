@@ -51,10 +51,11 @@ public class Query extends javax.swing.JFrame {
         txtResult.setBackground(new java.awt.Color(255, 247, 230));
         txtResult.setColumns(20);
         txtResult.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        txtResult.setForeground(new java.awt.Color(153, 77, 0));
         txtResult.setRows(5);
         jScrollPane1.setViewportView(txtResult);
 
-        jButton1.setBackground(new java.awt.Color(255, 153, 102));
+        jButton1.setBackground(new java.awt.Color(191, 128, 64));
         jButton1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Back");
@@ -64,7 +65,7 @@ public class Query extends javax.swing.JFrame {
             }
         });
 
-        btnSearch.setBackground(new java.awt.Color(255, 153, 102));
+        btnSearch.setBackground(new java.awt.Color(191, 128, 64));
         btnSearch.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btnSearch.setForeground(new java.awt.Color(255, 255, 255));
         btnSearch.setText("Search");
@@ -76,6 +77,7 @@ public class Query extends javax.swing.JFrame {
 
         txtQuery.setBackground(new java.awt.Color(255, 247, 230));
         txtQuery.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        txtQuery.setForeground(new java.awt.Color(153, 77, 0));
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 30)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(204, 102, 0));
@@ -86,12 +88,8 @@ public class Query extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(252, 252, 252)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(256, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(19, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGap(320, 320, 320)
@@ -103,15 +101,19 @@ public class Query extends javax.swing.JFrame {
                         .addGap(311, 311, 311)
                         .addComponent(btnSearch)))
                 .addGap(14, 14, 14))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(254, 254, 254)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(55, 55, 55)
+                .addGap(42, 42, 42)
                 .addComponent(jLabel2)
-                .addGap(33, 33, 33)
-                .addComponent(txtQuery, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(25, 25, 25)
+                .addComponent(txtQuery, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(btnSearch)
                 .addGap(30, 30, 30)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 247, javax.swing.GroupLayout.PREFERRED_SIZE)
