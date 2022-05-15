@@ -247,7 +247,7 @@ public class login extends javax.swing.JFrame {
                 String passw = rs.getNString("cus_pass");
                 
                 if(email.equals(user) && pass.equals(passw)){
-                    JOptionPane.showMessageDialog(this,"Successfully logined !");
+                    JOptionPane.showMessageDialog(this," Login Successfully!");
                     this.setVisible(false);
 //                    new Profile(email,pass).setVisible(false);
                     new index(email,pass).setVisible(true);
