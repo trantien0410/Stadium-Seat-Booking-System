@@ -127,7 +127,7 @@ public class History extends javax.swing.JFrame {
         txtResult.replaceSelection("");
         String connectionUrl = new ConnectionProvider().getConnection();
         try (Connection con = DriverManager.getConnection(connectionUrl); java.sql.Statement stmt = con.createStatement();) {
-            String SQL = "select t.team1,t.team2 , b.total_payment, b.booking_date, b.type_payment, t.ticket_type from ticket as t join booking as b on t.ticket_id = b.ticket_id;";
+            String SQL = "select t.team1,t.team2 , b.total_payment, b.booking_date, b.type_payment, t.ticket_type from ticket as t join booking as b on t.ticket_id = b.ticket_id join user as u on u.cus_id = b.cus_id where u.cus_gmail='"+user+"' ;";
             ResultSet rs = stmt.executeQuery(SQL);
  
             // Iterate through the data in the result set and display it.

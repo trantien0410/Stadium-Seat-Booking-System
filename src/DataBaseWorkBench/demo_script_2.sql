@@ -35,15 +35,5 @@ create table booking (
     FOREIGN KEY (ticket_id) references ticket(ticket_id),
 	FOREIGN KEY (cus_id) references user(cus_id)
 );
-create table transaction(
-	trans_id int(11) not null unique auto_increment,
-    ticket_id int(11) not null,
-    booking_id int(25) not null,
-    cus_id int(25) not null,
-    trans_date date default(curdate()) ,
-    primary key(trans_id),
-	FOREIGN KEY (booking_id) references booking(booking_id)
-);
-
 SET FOREIGN_KEY_CHECKS = 1;
 select * from ticket;

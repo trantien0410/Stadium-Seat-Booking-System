@@ -356,9 +356,8 @@ public class transaction extends javax.swing.JFrame {
 
         RemainingTicket();
 
-        String timeMatch = JTime.getText();
+   
         String type_payment = txtPayment.getSelectedItem().toString();
-        System.out.println("time match: "+timeMatch);
         System.out.println("type: "+type_payment);
         String connectionUrl = new ConnectionProvider().getConnection();
         try (Connection con = DriverManager.getConnection(connectionUrl); java.sql.Statement stmt = con.createStatement();) {
@@ -377,24 +376,24 @@ public class transaction extends javax.swing.JFrame {
                 stmt.executeUpdate(Active);
                 System.out.println("success update Active");
             }
-            String SQL = "insert into booking (ticket_id,cus_id,time_match,total_payment,type_payment) value('"+this.ID+"','"+this.id_user+"','"+timeMatch+"','"+this.pricePrint+"','"+type_payment+"')";
+            String SQL = "insert into booking (ticket_id,cus_id,total_payment,type_payment) value('"+this.ID+"','"+this.id_user+"','"+this.pricePrint+"','"+type_payment+"')";
             stmt.executeUpdate(SQL);
             System.out.println("success insert");
 
-            try{
-
-                String getbooking = "select max(booking_id) from booking";
-                ResultSet rs2 = stmt.executeQuery(getbooking);
-                while(rs2.next()){
-                    this.booking_id = rs2.getString("max(booking_id)");
-                    System.out.println("Get booking_id: "+this.booking_id);
-                }
-                String updateTrans = "insert into transaction (ticket_id,booking_id,cus_id) value('"+this.ID+"','"+this.booking_id+"','"+this.id_user+"')";
-                stmt.executeUpdate(updateTrans);
-                System.out.print("sucessfully insert transaction");
-            }catch(Exception e){
-                e.printStackTrace();
-            }
+//            try{
+//
+//                String getbooking = "select max(booking_id) from booking";
+//                ResultSet rs2 = stmt.executeQuery(getbooking);
+//                while(rs2.next()){
+//                    this.booking_id = rs2.getString("max(booking_id)");
+//                    System.out.println("Get booking_id: "+this.booking_id);
+//                }
+//                String updateTrans = "insert into transaction (ticket_id,booking_id,cus_id) value('"+this.ID+"','"+this.booking_id+"','"+this.id_user+"')";
+//                stmt.executeUpdate(updateTrans);
+//                System.out.print("sucessfully insert transaction");
+//            }catch(Exception e){
+//                e.printStackTrace();
+//            }
             JOptionPane.showMessageDialog(this, "Sucessfully Payment!", "Message", JOptionPane.WARNING_MESSAGE);
             this.setVisible(false);
             new index(user,pass).setVisible(true);
