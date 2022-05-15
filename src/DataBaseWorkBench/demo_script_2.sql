@@ -24,12 +24,11 @@ create table ticket(
     primary key (ticket_id)
 );
 create table booking (
-	booking_id int(25) not null unique auto_increment,
+    booking_id int(25) not null unique auto_increment,
     ticket_id int(11) not null,
     cus_id int(25) not null,
     booking_date date default(curdate()) ,
-	time_match time not null,
-    total_payment float(9.2) not null,
+    quantity int not null,
     type_payment varchar(10) not null,
     primary key (booking_id),
     FOREIGN KEY (ticket_id) references ticket(ticket_id),
