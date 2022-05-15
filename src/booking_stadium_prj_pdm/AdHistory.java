@@ -126,7 +126,7 @@ public class AdHistory extends javax.swing.JFrame {
 
  
         try (Connection con = DriverManager.getConnection(connectionUrl); java.sql.Statement stmt = con.createStatement();) {
-            String SQL = "select u.first_name, u.last_name,t.team1, t.team2, (b.total_payment/t.price) as quantity ,b.booking_date, b.total_payment,b.type_payment,t.ticket_type,t.time_match from booking as b join user as u  on b.cus_id = u.cus_id join ticket as t on t.ticket_id = b.ticket_id;";
+            String SQL = "select u.first_name, u.last_name,t.team1, t.team2,  b.quantity,t.price ,b.booking_date,(b.quantity*t.price) as total_price,b.type_payment,t.ticket_type,t.time_match from booking as b join user as u  on b.cus_id = u.cus_id join ticket as t on t.ticket_id = b.ticket_id;";
             ResultSet rs = stmt.executeQuery(SQL);
  
             // Iterate through the data in the result set and display it.

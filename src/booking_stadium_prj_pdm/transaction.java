@@ -376,7 +376,7 @@ public class transaction extends javax.swing.JFrame {
                 stmt.executeUpdate(Active);
                 System.out.println("success update Active");
             }
-            String SQL = "insert into booking (ticket_id,cus_id,total_payment,type_payment) value('"+this.ID+"','"+this.id_user+"','"+this.pricePrint+"','"+type_payment+"')";
+            String SQL = "insert into booking (ticket_id,cus_id,quantity,type_payment) value('"+this.ID+"','"+this.id_user+"','"+this.quantity+"','"+type_payment+"')";
             stmt.executeUpdate(SQL);
             System.out.println("success insert");
 
